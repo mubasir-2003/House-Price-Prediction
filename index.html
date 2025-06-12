@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Boston Housing Price Prediction</h2>
+        <form action="/predict" method="post">
+
+            <label>CRIM:</label>
+            <input type="text" name="CRIM">
+
+            <label>ZN:</label>
+            <input type="text" name="ZN">
+
+            <label>INDUS:</label>
+            <input type="text" name="INDUS">
+
+            <label>CHAS:</label>
+            <input type="text" name="CHAS">
+
+            <label>NOX:</label>
+            <input type="text" name="NOX">
+
+            <label>RM:</label>
+            <input type="text" name="RM">
+
+            <label>AGE:</label>
+            <input type="text" name="AGE">
+
+            <label>DIS:</label>
+            <input type="text" name="DIS">
+
+            <label>RAD:</label>
+            <input type="text" name="RAD">
+
+            <label>TAX:</label>
+            <input type="text" name="TAX">
+
+            <label>PTRATIO:</label>
+            <input type="text" name="PTRATIO">
+
+            <label>B:</label>
+            <input type="text" name="B">
+
+            <label>LSTAT:</label>
+            <input type="text" name="LSTAT">
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

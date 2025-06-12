@@ -1,0 +1,19 @@
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import joblib  # use pickle if you prefer
+
+# Step 1: Load dataset
+data = pd.read_csv("BostonHousing.csv")  # Make sure this file exists
+
+# Step 2: Features and target
+X = data.drop("medv", axis=1)
+y = data["medv"]
+
+# Step 3: Train model
+model = LinearRegression()
+model.fit(X, y)
+
+# Step 4: Save model as .pkl
+joblib.dump(model, "house_price_prediction.pkl")
+
+print(" house_price_prediction.pkl saved successfully!")
